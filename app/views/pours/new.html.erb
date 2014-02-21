@@ -1,0 +1,11 @@
+<h1> Create New Pour </h1>
+<%= form_for :pour, url: pours_path do |f| %>
+  <p>
+    <%= f.label "Volume: " %><br>
+    <%= f.text_field :volume %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
