@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  keg_id: 1
+  user_id: 1
+  volume: 1
+
+two:
+  keg_id: 1
+  user_id: 1
+  volume: 1
