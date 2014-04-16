@@ -1,12 +1,13 @@
 class PoursController < ApplicationController
   
   def new
+    @keg
   end
 
   def create
     @pour = Pour.new(pour_params)
     @pour.save
-    redirect_to @pour  
+    redirect_to @pour.user
   end
 
   def show

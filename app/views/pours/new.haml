@@ -1,0 +1,27 @@
+
+.row
+  .col-xs-6
+    %h1 Create New Pour
+    = form_for :pour, url: pours_path do |f|
+
+      %p
+        = f.label "User Name"
+        = collection_select(:pour, :user_id, User.all, :id, :username, {:prompt => 'Select a user'})
+
+
+      
+      %p
+        = f.label "Volume: "
+        = f.select(:volume, options_for_select([[8, 8], [12, 12], [16, 16]], 12)) 
+
+      %p
+        = f.submit
+        = link_to 'New User', new_user_path
+        = link_to 'Add Keg', new_keg_path
+
+
+  .col-xs-6
+    %h1 Current Keg
+    
+    %p
+      = "Current Keg: #{Keg.current_kegs}"

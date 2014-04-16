@@ -1,0 +1,13 @@
+%h1 Create New Keg
+= form_for :keg, url: kegs_path do |f| 
+  %p
+    = f.label "Keg Name:"
+    = f.text_field :name, value: @keg.try(:name)
+    = f.label "Currently tapped?"
+    = f.check_box :currently_tapped
+
+  %p
+    = f.submit 
+
+  %p
+    = link_to 'Back to Drinking', new_pour_path

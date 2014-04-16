@@ -17,10 +17,20 @@ class KegsController < ApplicationController
     @kegs = Keg.all
   end
 
+  def edit
+    @keg = Keg.find(params[:id])
+  end
+
+  def update
+    @keg = Keg.find_by(id: params[:id])
+    @keg.update(keg_params)
+    redirect_to @keg
+  end
+
   private
   
   def keg_params
-    params.require(:keg).permit(:name)
+    params.require(:keg).permit(:name, :currently_tapped)
   end
 
 end

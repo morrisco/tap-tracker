@@ -3,5 +3,5 @@ TapTracker::Application.routes.draw do
   resources :kegs
   resources :pours
 
-  root "home#index"
+  root "pours#new"
 end

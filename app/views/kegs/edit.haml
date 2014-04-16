@@ -1,0 +1,14 @@
+%h1 Edit Keg
+= form_for :keg, url: keg_path(@keg), method: :put do |f| 
+  %p
+    = f.label "Keg Name:"
+    = f.text_field :name, value: @keg.name
+    = f.label "Currently tapped?"
+    = f.check_box :currently_tapped
+
+  %p
+    = f.submit 
+
+  %p
+    = link_to 'Back to Drinking', new_pour_path
+
