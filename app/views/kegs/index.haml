@@ -5,5 +5,6 @@
   - @kegs.each do |keg|
     %tr
       %td= keg.name
+      %td= "#{keg.volume_in_gallons} Gallons"
       %td= link_to 'Edit', edit_keg_path(keg)
 

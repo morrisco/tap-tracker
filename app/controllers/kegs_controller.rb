@@ -30,7 +30,7 @@ class KegsController < ApplicationController
   private
   
   def keg_params
-    params.require(:keg).permit(:name, :currently_tapped)
+    params.require(:keg).permit(:name, :currently_tapped, :volume)
   end
 
 end

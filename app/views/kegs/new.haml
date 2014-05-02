@@ -5,6 +5,8 @@
     = f.text_field :name, value: @keg.try(:name)
     = f.label "Currently tapped?"
     = f.check_box :currently_tapped
+    = f.label "Keg Size"
+    = f.select(:volume, options_for_select([["5 gallon", 640], ["15.5 gallons", 1984]], "5 gallon"))
 
   %p
     = f.submit 
