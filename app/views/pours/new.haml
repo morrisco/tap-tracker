@@ -24,9 +24,12 @@
 
 
   .col-xs-6
-    %h1 Current Kegs
-    
-    - Keg.current_kegs.each do |k| 
-      .row
-        = k.name
-        = k.volume_remaining
+    %table.table.table-condensed.table-hover.narrow-gutter
+      %td 
+        %h2 Keg name
+      %td 
+        %h2 Pours Left
+      - Keg.current_kegs.each do |k| 
+        %tr 
+          %td= "#{k.name}"
+          %td= "#{k.pours_remaining}"

@@ -19,6 +19,10 @@ class Keg < ActiveRecord::Base
     volume - total_poured
   end
 
+  def pours_remaining
+    volume_remaining / 12
+  end
+
   def total_poured
     pours.map(&:volume).reduce(0, :+)
   end
