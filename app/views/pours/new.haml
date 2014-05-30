@@ -8,6 +8,9 @@
         = f.label "User Name"
         = collection_select(:pour, :user_id, User.all, :id, :username, {:prompt => 'Select a user'})
 
+      %p
+        =f.label "Kegs"
+        = collection_select(:pour, :keg_id, Keg.all, :id, :name)
 
       
       %p
@@ -21,8 +24,9 @@
 
 
   .col-xs-6
-    %h1 Current Keg
+    %h1 Current Kegs
     
     - Keg.current_kegs.each do |k| 
       .row
-        = k
+        = k.name
+        = k.volume_remaining
