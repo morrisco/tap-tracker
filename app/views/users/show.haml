@@ -2,14 +2,24 @@
   %strong Username: 
   = @user.username
 
-%strong
+%h2
   Pours:
 %table.table.table-condensed.table-hover.narrow-gutter
+  %td
+    %strong Index
+  %td
+    %strong Keg name
+  %td
+    %strong Date
+  %td
+    %strong Volume in ounces
+
   - @user.pours.reverse.each_with_index do |pour, index|
     %tr
       %td= "#{index + 1}"
       %td= "#{pour.keg.try :name}"
       %td= "#{pour.created_at.to_formatted_s(:short)}"
+      %td= "#{pour.volume}"
 
 %p
-  = link_to 'Back to drinking', new_pour_path
+  = link_to 'Back to drikning', new_pour_path

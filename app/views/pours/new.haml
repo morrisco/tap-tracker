@@ -6,7 +6,7 @@
 
       %p
         = f.label "User Name"
-        = collection_select(:pour, :user_id, User.all, :id, :username, {:prompt => 'Select a user'})
+        = collection_select(:pour, :user_id, User.all, :id, :username, {:prompt => 'Pick a user'})
 
       %p
         =f.label "Kegs"
